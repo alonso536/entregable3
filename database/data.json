@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "Smartphone Samsung Galaxy S21",
+    "description": "Potente smartphone con pantalla AMOLED de 6.2 pulgadas, cámara de alta resolución y procesador Snapdragon 888.",
+    "price": 79999,
+    "thumbnail": "sin imagen",
+    "code": "SSG21PH1",
+    "stock": 10
+  },
+  {
+    "id": 2,
+    "title": "Laptop HP Pavilion 15",
+    "description": "Portátil con pantalla de 15.6 pulgadas, procesador Intel Core i5, 8GB de RAM y disco SSD de 256GB.",
+    "price": 64999,
+    "thumbnail": "sin imagen",
+    "code": "HPV15LT2",
+    "stock": 15
+  },
+  {
+    "id": 3,
+    "title": "Smart TV LG 55UP8000",
+    "description": "Televisor inteligente con resolución 4K, pantalla de 55 pulgadas y compatibilidad con HDR10 y HLG.",
+    "price": 89999,
+    "thumbnail": "sin imagen",
+    "code": "LGT55TV3",
+    "stock": 8
+  },
+  {
+    "id": 4,
+    "title": "Tablet Apple iPad Air",
+    "description": "Tableta con pantalla Retina de 10.9 pulgadas, chip A14 Bionic, Touch ID y soporte para Apple Pencil.",
+    "price": 58999,
+    "thumbnail": "sin imagen",
+    "code": "APDAIRTA1",
+    "stock": 12
+  },
+  {
+    "id": 5,
+    "title": "Cámara Canon EOS M50 Mark II",
+    "description": "Cámara digital sin espejo con sensor APS-C de 24.1MP, capacidad de grabación de video 4K y pantalla táctil articulada.",
+    "price": 74999,
+    "thumbnail": "sin imagen",
+    "code": "CANM50C1",
+    "stock": 5
+  },
+  {
+    "id": 6,
+    "title": "Auriculares Sony WH-1000XM4",
+    "description": "Auriculares inalámbricos con cancelación de ruido, batería de larga duración y sonido de alta calidad.",
+    "price": 39999,
+    "thumbnail": "sin imagen",
+    "code": "SNY100XM4",
+    "stock": 20
+  },
+  {
+    "id": 7,
+    "title": "Monitor LG UltraGear 27GL850-B",
+    "description": "Monitor para juegos con resolución QHD de 27 pulgadas, frecuencia de actualización de 144Hz y tiempo de respuesta de 1ms.",
+    "price": 49999,
+    "thumbnail": "sin imagen",
+    "code": "LGMON27Q1",
+    "stock": 10
+  },
+  {
+    "id": 8,
+    "title": "Impresora HP DeskJet 2720",
+    "description": "Impresora multifuncional con conectividad Wi-Fi, impresión a doble cara y compatibilidad con cartuchos de tinta HP originales.",
+    "price": 34999,
+    "thumbnail": "sin imagen",
+    "code": "HPDJ2720",
+    "stock": 15
+  },
+  {
+    "id": 9,
+    "title": "Router TP-Link Archer C6",
+    "description": "Router inalámbrico de doble banda con velocidades combinadas de hasta 1200Mbps, cuatro antenas y puertos Gigabit.",
+    "price": 24999,
+    "thumbnail": "sin imagen",
+    "code": "TPLINKC6",
+    "stock": 8
+  },
+  {
+    "id": 10,
+    "title": "Teclado mecánico Logitech G413",
+    "description": "Teclado para juegos con interruptores mecánicos Romer-G, retroiluminación y chasis de aleación de aluminio.",
+    "price": 19999,
+    "thumbnail": "sin imagen",
+    "code": "LOGG413KB",
+    "stock": 12
+  }
+]
