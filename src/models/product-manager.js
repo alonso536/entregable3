@@ -1,5 +1,5 @@
 import fs from "fs";
-import Product from "../models/product.js";
+import Product from "./product.js";
 
 import { dirname } from "../path.js";
 
@@ -15,6 +15,11 @@ class ProductManager {
                 Product.increments = this.products.at(-1).id;
             }
         }
+    }
+
+    addProduct(product) {
+        this.products.push(product);
+        fs.writeFileSync(this.path, JSON.stringify(this.products, null, 2, "\t"));
     }
 
     getProducts() {

@@ -1,0 +1,66 @@
+<main class="container">
+    <h1 class="text-center my-3">Listado de Productos</h1>
+    <button type="button" class="btn btn-primary btn-lg bg-gradient my-3" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Crear Producto</button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Crear Producto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="#", method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="title" class="col-form-label">Title</label>
+                        <input type="text" class="form-control" name="title" id="title">
+                    </div>
+                    <div class="div-error text-danger mb-3"></div>
+                    <div class="mb-3">
+                        <label for="description" class="col-form-label">Description</label>
+                        <textarea class="form-control" name="description" id="description"></textarea>
+                    </div>
+                    <div class="div-error text-danger mb-3"></div>
+                    <div class="mb-3">
+                        <label for="price" class="col-form-label">Price</label>
+                        <input type="number" class="form-control" name="price" id="price">
+                    </div>
+                    <div class="div-error text-danger mb-3"></div>
+                    <div class="mb-3">
+                        <label for="code" class="col-form-label">Code</label>
+                        <input type="text" class="form-control" name="code" id="code">
+                    </div>
+                    <div class="div-error text-danger mb-3"></div>
+                    <div class="mb-3">
+                        <label for="stock" class="col-form-label">Stock</label>
+                        <input type="number" class="form-control" name="stock" id="stock">
+                    </div>
+                    <div class="div-error text-danger mb-3"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary bg-gradient" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary bg-gradient">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        
+        </div>
+    </div>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Code</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+        <tbody id="products">
+
+        </tbody>
+    </table>
+</main>
+<script src="./socket.io/socket.io.js"></script>
+<script src="./js/index.js"></script>

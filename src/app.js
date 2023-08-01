@@ -1,41 +1,52 @@
 import express from "express";
-import ProductManager from "./product-manager.js";
+import cors from "cors";
+import handlebars from "express-handlebars";
+import { Server } from "socket.io";
+import { dirname } from "./path.js";
+
+import ProductManager from "./models/product-manager.js";
+import Product from "./models/product.js";
 
 const app = express();
 const port = 8080;
 
+const httpServer = app.listen(port, () => {
+    console.log(`Server running in port: ${port}`);
+});
+
+const socketServer = new Server(httpServer);
+
+app.use(cors());
+app.use(express.json());
+app.use(express.static(`${dirname}/public`));
+
+app.engine("handlebars", handlebars.engine());
+
+app.set("views", `${dirname}/views`);
+app.set("view engine", "handlebars");
+
 const productManager = new ProductManager();
+const products = productManager.getProducts();
 
-app.get("/products", (req, res) => {
-    const { limit } = req.query;
-    let products = productManager.getProducts();
+socketServer.on("connection", socket => {
+    console.log(`Cliente conectado ${socket.id}`);
+    socketServer.emit("products", products);
 
-    if(limit) {
-        products = products.slice(0, limit);
-    }
+    socket.on("form-data", ({ title, description, price, code, stock }) => {
+        productManager.addProduct(new Product(title, description, price, "sin imagen", code, stock));
+        socket.emit("products", products);
+    });
+});
 
-    return res.status(200).json({
+app.get("/", (req, res) => {
+    res.render('home', {
+        title: 'Productos',
         products
     });
 });
 
-app.get("/products/:id", (req, res) => {
-    const { id } = req.params;
-    
-    try {
-        const product = productManager.getProductById(Number(id));
-
-        return res.status(200).json({
-            product
-        });
-    } catch(error) {
-        return res.status(404).json({
-            msg: `No se  encontró un producto con el id ${id}`
-        });
-    }
-    
-});
-
-app.listen(port, () => {
-    console.log(`Server running in port: ${port}`);
+app.get("/realtimeproducts", (req, res) => {
+    res.render('realTimeProducts', {
+        title: 'Productos con WebSockets',
+    })
 });
